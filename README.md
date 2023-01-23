@@ -1,6 +1,3 @@
-### TODO:
-Update package.json for author, commands ect
-
 # Flow Event Processor
 
 This package contains code which can convert a file of epoch times to a meaningful json file which represents coffee machine events.
