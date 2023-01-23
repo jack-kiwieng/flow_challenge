@@ -1,0 +1,20 @@
+{
+  "name": "flow_test",
+  "version": "1.0.0",
+  "description": "Test app for identifying Flow events\"",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node src/app.js"
+  },
+  "author": "Jack Barker",
+  "license": "ISC",
+  "dependencies": {
+    "line-reader": "^0.4.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "jest": "^29.3.1"
+  }
+}
