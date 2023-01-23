@@ -37,6 +37,8 @@ There is a constants file that configures how this seperation is done.
 
 The FlowDataIngestor can take a list of FlowDataPoints, and holds state.  In this case, it takes the entire file's worth of data points.  In a more generic case, you could give it single data points (or a subset of points) and it will continue to process.  By having it keep state, it can continue to ingest streaming data from a coffee machine as pours continue. 
 
+Also included in the ingestor is the subscribeNewEvent method.  This can be used when streaming data to have new events be pushed to other code for further processing.
+
 ### FlowDataPoint classification
 
 The FlowDataPoint class handles classification of an event into a FlowEventType (noise, purge or extraction).  FlowDataPoint has a classifier injected into it (the default classifier by default).
