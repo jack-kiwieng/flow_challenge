@@ -18,9 +18,9 @@ test("default constructor does not throw errors", () => {
 
 describe("Test ingestFromFlowDataPoints method", () => {
   test("null input throws error", () => {
-    expect(() =>
-      new FlowDataIngestor().ingestFromFlowDataPoints(null)
-    ).toThrow("No data provided.");
+    expect(() => new FlowDataIngestor().ingestFromFlowDataPoints(null)).toThrow(
+      "No data provided."
+    );
   });
 
   test("empty list gives empty response", () => {
@@ -76,5 +76,3 @@ describe("Test ingestFromFlowDataPoints method", () => {
     expect(underTest.getProcessedEvents()).toEqual(expectedResponse);
   });
 });
-
-

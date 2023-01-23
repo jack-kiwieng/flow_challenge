@@ -1,5 +1,8 @@
 import FlowEvent from "./models/flowEvent.js";
-import { MINIMUM_DATA_COUNT, TIMESTAMP_THRESHOLD_INCLUSIVE }from "./constants.js";
+import {
+  MINIMUM_DATA_COUNT,
+  TIMESTAMP_THRESHOLD_INCLUSIVE,
+} from "./constants.js";
 
 const IngestionStates = {
   DATA: "data",
@@ -17,7 +20,7 @@ class FlowDataIngestor {
     if (this.currentEventData.length == 0) {
       return;
     }
-    let newEvent = new FlowEvent(this.currentEventData);
+    const newEvent = new FlowEvent(this.currentEventData);
     this.completedEvents.push(newEvent);
     if (!!this.ingestionSubscription) {
       this.ingestionSubscription(newEvent);
@@ -34,7 +37,7 @@ class FlowDataIngestor {
           (dataPoint) => dataPoint.duration <= TIMESTAMP_THRESHOLD_INCLUSIVE
         )
     ) {
-      let carryOverEvents = this.currentEventData.slice(-MINIMUM_DATA_COUNT);
+      const carryOverEvents = this.currentEventData.slice(-MINIMUM_DATA_COUNT);
       this.currentEventData.splice(-MINIMUM_DATA_COUNT);
       this.ingestionState = IngestionStates.DATA;
       this.createEvent();
