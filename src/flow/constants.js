@@ -1,0 +1,3 @@
+export const TIMESTAMP_THRESHOLD_INCLUSIVE = 400;
+export const MINIMUM_DATA_COUNT = 10;
+export const EXTRACTION_TAIL_RATIO = 0.3;
